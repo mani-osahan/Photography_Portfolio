@@ -1,39 +1,77 @@
-import logo from './logo.svg';
 import './App.css';
+import sample from './sample.jpeg'
+import React from 'react'
+import instagram from './instagram.png'
+import {BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
+import Gear from "./Gear"
 
-function App() {
-    return (
-        <html>
-        <header>
+class Index extends React.Component {
 
-            <div className="logo">
-                <p>Manipal Osahan</p>
-            </div>
+    render() {
 
-            <div className="sidenav">
+        return (
+            <Router>
+
+                <html>
+
+                <header className="menu">
+
+                    <div className="logo">
+                        <a href="#">
+                            <h1>Manipal Osahan</h1>
+
+                        </a>
+
+                    </div>
+
+                    <div className="nav">
 
 
-                <a href="#">About</a>
-                <a href="#">About</a>
-                <a href="#">About</a>
-                <a href="#">About</a>
+                            <ul>
+                                <li><a className="linkAnim" href="/">PORTFOLIO</a></li>
+                                <li><a className="linkAnim" href="/presets">PRESETS</a></li>
+                                <li><a className="linkAnim" href="/gear">GEAR</a></li>
+                                <li><a className="linkAnim" href="/about">ABOUT</a></li>
+                                <li><a className="linkAnim" href="/"><img className="instaicon" alt='' src={instagram}/></a>
 
-            </div>
-        </header>
+                                </li>
+                            </ul>
 
-        <body>
-        <div className="body">
-            <h2>testing</h2>
-        </div>
-        </body>
 
-        <foooter>
-            <div>
-                <p>Manipal</p>
-            </div>
-        </foooter>
-        </html>
-    );
+
+                    </div>
+
+                    <div className="top_main">
+                        <img src={sample} alt="sample"/>
+                    </div>
+
+                </header>
+
+                <body className="body">
+
+
+                <h3>Welcome to my portfolio</h3>
+                <p>Click here to view my portfolio</p>
+                <nav>
+                <li><Link to="/gear">gear</Link></li>
+                </nav>
+
+
+
+                </body>
+
+
+                <footer className="footer">
+
+
+                </footer>
+
+
+                </html>
+            </Router>
+        )
+    }
 }
 
-export default App;
+
+export default Index;
